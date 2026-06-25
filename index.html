@@ -4,209 +4,338 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Risji Joki — Wuthering Waves Pricelist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.0.0/tabler-icons.min.css"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg-primary: #ffffff;
-      --bg-secondary: #f7f6f3;
-      --bg-tertiary: #eeecea;
-      --text-primary: #1a1a18;
-      --text-secondary: #5f5e5a;
-      --text-tertiary: #999891;
-      --border: rgba(0,0,0,0.10);
-      --border-md: rgba(0,0,0,0.18);
-      --radius-md: 8px;
-      --radius-lg: 13px;
-      --purple-light: #EEEDFE;
-      --purple-mid: #534AB7;
-      --purple-dark: #3C3489;
-      --teal-light: #E1F5EE;
-      --teal-mid: #0F6E56;
-      --blue-light: #E6F1FB;
-      --blue-mid: #185FA5;
-      --amber-light: #FAEEDA;
-      --amber-mid: #854F0B;
-      --green-light: #EAF3DE;
-      --green-mid: #27500A;
-      --coral-light: #FAECE7;
+      --bg-deep:    #0B0A0F;
+      --bg-card:    #13111A;
+      --bg-card2:   #1A1724;
+      --border:     rgba(180,120,60,0.18);
+      --border-glow:rgba(180,120,60,0.45);
+      --gold:       #C8933A;
+      --gold-light: #E8B96A;
+      --gold-dim:   #8A6025;
+      --red:        #C0392B;
+      --red-light:  #E85542;
+      --crimson:    #8B1C1C;
+      --text-primary: #F0EAD6;
+      --text-secondary: #A09880;
+      --text-dim:   #5C5448;
+      --purple:     #7B5EA7;
+      --purple-light:#A07ED0;
+      --teal:       #2A8C7A;
+      --teal-light: #3DB89E;
+      --radius-sm:  6px;
+      --radius-md:  10px;
+      --radius-lg:  14px;
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: var(--bg-tertiary);
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--bg-deep);
       color: var(--text-primary);
       min-height: 100vh;
-      padding: 2rem 1rem 3rem;
+      padding: 0 0 3rem;
+      position: relative;
+      overflow-x: hidden;
     }
 
-    .page { max-width: 640px; margin: 0 auto; }
+    /* Subtle background texture */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 40% at 50% 0%, rgba(139,28,28,0.12) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 30% at 80% 80%, rgba(123,94,167,0.08) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
 
-    /* HERO */
+    .page { max-width: 680px; margin: 0 auto; padding: 0 1rem; position: relative; z-index: 1; }
+
+    /* ── HERO ── */
     .hero {
       text-align: center;
-      background: var(--bg-primary);
-      border: 0.5px solid var(--border);
+      padding: 2.5rem 1.5rem 2rem;
+      position: relative;
+      margin-bottom: 0.5rem;
+    }
+    .hero-top-border {
+      position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+      width: 180px; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+    .hero-ornament {
+      font-size: 11px; letter-spacing: 4px; color: var(--gold);
+      text-transform: uppercase; font-family: 'Cinzel', serif;
+      margin-bottom: 10px; opacity: 0.8;
+    }
+    .hero-name {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(36px, 8vw, 56px);
+      font-weight: 900;
+      letter-spacing: 3px;
+      line-height: 1;
+      margin-bottom: 4px;
+      background: linear-gradient(135deg, #E8D08A 0%, #C8933A 40%, #E8B96A 60%, #9A6820 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: none;
+      filter: drop-shadow(0 2px 12px rgba(200,147,58,0.3));
+    }
+    .hero-sub {
+      font-family: 'Cinzel', serif;
+      font-size: 12px; letter-spacing: 6px; color: var(--text-secondary);
+      text-transform: uppercase; margin-bottom: 20px;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: linear-gradient(135deg, var(--red) 0%, var(--crimson) 100%);
+      border: 1px solid rgba(200,60,40,0.4);
+      border-radius: 3px;
+      padding: 6px 20px;
+      font-family: 'Cinzel', serif;
+      font-size: 11px; font-weight: 600; letter-spacing: 2px;
+      color: #FFE0A0; margin-bottom: 24px;
+      box-shadow: 0 0 20px rgba(192,57,43,0.3);
+    }
+    .pills {
+      display: flex; flex-wrap: wrap; gap: 6px; justify-content: center;
+      margin-bottom: 8px;
+    }
+    .pill {
+      display: inline-flex; align-items: center; gap: 5px;
+      border: 1px solid var(--border);
+      border-radius: 3px; padding: 5px 12px;
+      font-size: 11px; color: var(--text-secondary);
+      background: rgba(255,255,255,0.03);
+      letter-spacing: 0.3px;
+    }
+    .pill i { font-size: 13px; color: var(--gold); }
+
+    /* ── SECTION LABEL ── */
+    .sec-label {
+      display: flex; align-items: center; gap: 10px;
+      font-family: 'Cinzel', serif;
+      font-size: 11px; font-weight: 600; color: var(--gold);
+      letter-spacing: 3px; text-transform: uppercase;
+      margin: 1.75rem 0 0.85rem;
+    }
+    .sec-label::before, .sec-label::after {
+      content: ''; flex: 1; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border-glow));
+    }
+    .sec-label::before { background: linear-gradient(90deg, transparent, var(--border-glow)); }
+    .sec-label::after  { background: linear-gradient(90deg, var(--border-glow), transparent); }
+    .sec-label i { font-size: 16px; }
+
+    /* ── CARD ── */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
       border-radius: var(--radius-lg);
-      padding: 2rem 1.5rem 1.75rem;
-      margin-bottom: 1.25rem;
+      padding: 1.25rem 1.25rem;
+      margin-bottom: 10px;
       position: relative;
       overflow: hidden;
     }
-    .hero-accent {
-      position: absolute; top: 0; left: 0; right: 0; height: 3px;
-      background: linear-gradient(90deg, #534AB7, #7F77DD, #534AB7);
+    .card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
     }
-    .hero-chip {
-      display: inline-flex; align-items: center; gap: 6px;
-      background: var(--purple-light); color: var(--purple-dark);
-      font-size: 11px; font-weight: 700; letter-spacing: 1.2px;
-      padding: 4px 14px; border-radius: 20px; margin-bottom: 14px;
-    }
-    .hero-chip i { font-size: 13px; }
-    .hero-name { font-size: 30px; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; letter-spacing: -0.5px; }
-    .hero-tagline { font-size: 13px; color: var(--text-secondary); margin-bottom: 20px; }
-    .pills { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; }
-    .pill {
-      display: inline-flex; align-items: center; gap: 5px;
-      border: 0.5px solid var(--border-md);
-      border-radius: 20px; padding: 4px 11px;
-      font-size: 12px; color: var(--text-secondary);
-      background: var(--bg-secondary);
-    }
-    .pill i { font-size: 13px; color: var(--purple-mid); }
-
-    /* SECTION LABEL */
-    .sec-label {
-      display: flex; align-items: center; gap: 8px;
-      font-size: 11px; font-weight: 700; color: var(--text-tertiary);
-      letter-spacing: 1.2px; text-transform: uppercase;
-      margin: 1.5rem 0 0.75rem;
-    }
-    .sec-label::after { content:''; flex:1; height:0.5px; background: var(--border-md); }
-    .sec-label i { font-size: 14px; color: var(--purple-mid); }
-
-    /* CARD */
-    .card {
-      background: var(--bg-primary);
-      border: 0.5px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 1rem 1.25rem;
-      margin-bottom: 10px;
-    }
-    .card-header { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+    .card-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
     .card-icon {
-      width: 40px; height: 40px; border-radius: 10px;
+      width: 42px; height: 42px; border-radius: 8px;
       display: flex; align-items: center; justify-content: center;
       font-size: 20px; flex-shrink: 0;
+      border: 1px solid var(--border);
     }
-    .card-title { font-size: 15px; font-weight: 700; }
-    .card-desc { font-size: 12px; color: var(--text-secondary); margin-top: 2px; }
+    .card-title {
+      font-family: 'Cinzel', serif;
+      font-size: 15px; font-weight: 700; color: var(--text-primary);
+      letter-spacing: 1px;
+    }
+    .card-desc { font-size: 12px; color: var(--text-secondary); margin-top: 3px; }
 
-    /* PRICE ROW */
+    /* ── PRICE ROW ── */
     .prow {
       display: flex; justify-content: space-between; align-items: center;
-      padding: 8px 0; border-bottom: 0.5px solid var(--border);
+      padding: 9px 0; border-bottom: 1px solid rgba(255,255,255,0.05);
     }
     .prow:last-child { border-bottom: none; padding-bottom: 0; }
-    .prow-left { display: flex; align-items: center; gap: 8px; }
-    .prow-left i { font-size: 15px; color: var(--text-tertiary); flex-shrink: 0; }
-    .prow-label { font-size: 13px; }
+    .prow-left { display: flex; align-items: center; gap: 9px; }
+    .prow-left i { font-size: 15px; color: var(--text-dim); flex-shrink: 0; }
+    .prow-label { font-size: 13px; color: var(--text-primary); }
     .prow-sub { font-size: 11px; color: var(--text-secondary); margin-top: 2px; }
-    .pval { font-size: 13px; font-weight: 700; white-space: nowrap; margin-left: 12px; }
-    .pval.purple { color: var(--purple-mid); }
-    .pval.teal   { color: var(--teal-mid); }
-    .pval.blue   { color: var(--blue-mid); }
-    .pval.amber  { color: var(--amber-mid); }
+    .pval {
+      font-size: 13px; font-weight: 700; white-space: nowrap; margin-left: 12px;
+      font-family: 'Cinzel', serif; letter-spacing: 0.5px;
+    }
+    .pval.gold   { color: var(--gold-light); }
+    .pval.teal   { color: var(--teal-light); }
+    .pval.purple { color: var(--purple-light); }
+    .pval.red    { color: var(--red-light); }
 
-    /* AREA DIVIDER */
+    /* ── AREA DIVIDER ── */
     .area-head {
-      display: flex; align-items: center; gap: 6px;
-      font-size: 11px; font-weight: 700; color: var(--text-tertiary);
-      letter-spacing: 0.5px; padding: 8px 0 4px;
+      display: flex; align-items: center; gap: 7px;
+      font-size: 11px; font-weight: 600; color: var(--gold);
+      letter-spacing: 1px; padding: 10px 0 5px;
+      font-family: 'Cinzel', serif;
+      text-transform: uppercase;
     }
     .area-head i { font-size: 14px; }
 
-    /* MINI GRID */
-    .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 10px; }
-    .mini-card {
-      background: var(--bg-secondary);
-      border: 0.5px solid var(--border);
-      border-radius: 10px; padding: 0.9rem 1rem;
+    /* ── BUILD MINI GRID ── */
+    .build-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-bottom: 10px; }
+    .build-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1rem; text-align: center;
+      position: relative; overflow: hidden;
     }
-    .mini-card.feat { border: 2px solid var(--purple-mid); background: var(--bg-primary); }
-    .feat-tag {
-      display: inline-block; background: var(--purple-light); color: var(--purple-dark);
-      font-size: 10px; font-weight: 700; padding: 2px 9px; border-radius: 10px; margin-bottom: 6px;
+    .build-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
     }
-    .mini-head { display: flex; align-items: center; gap: 7px; margin-bottom: 4px; }
-    .mini-head i { font-size: 16px; }
-    .mini-title { font-size: 13px; font-weight: 700; }
-    .mini-price { font-size: 18px; font-weight: 700; color: var(--purple-mid); margin: 4px 0 8px; }
-    .mini-feat { font-size: 11px; color: var(--text-secondary); display: flex; flex-direction: column; gap: 3px; }
-    .mini-feat span { display: flex; align-items: center; gap: 5px; }
-    .mini-feat i { font-size: 12px; color: var(--teal-mid); }
+    .build-icon { font-size: 22px; margin-bottom: 7px; }
+    .build-title {
+      font-family: 'Cinzel', serif;
+      font-size: 11px; font-weight: 700; letter-spacing: 1px;
+      color: var(--text-secondary); text-transform: uppercase; margin-bottom: 8px;
+    }
+    .build-price {
+      font-family: 'Cinzel', serif;
+      font-size: 18px; font-weight: 900; color: var(--gold-light);
+    }
+    .build-sub { font-size: 10px; color: var(--text-dim); margin-top: 3px; }
 
-    /* BONUS */
+    /* ── RAWAT AKUN ── */
+    .rawat-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; }
+    .rawat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1rem 0.85rem;
+      position: relative; overflow: hidden;
+    }
+    .rawat-card.best {
+      border-color: var(--gold-dim);
+      background: linear-gradient(160deg, #1A1520 0%, #110F17 100%);
+    }
+    .rawat-card.best::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+    .rawat-badge {
+      display: inline-block; background: var(--gold); color: #0B0A0F;
+      font-size: 9px; font-weight: 700; padding: 2px 8px; border-radius: 2px;
+      letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px;
+    }
+    .rawat-header { display: flex; align-items: center; gap: 7px; margin-bottom: 5px; }
+    .rawat-header i { font-size: 16px; }
+    .rawat-title {
+      font-family: 'Cinzel', serif;
+      font-size: 12px; font-weight: 700; letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .rawat-price {
+      font-family: 'Cinzel', serif;
+      font-size: 20px; font-weight: 900; color: var(--gold-light);
+      margin: 6px 0 10px;
+    }
+    .rawat-feat { font-size: 11px; color: var(--text-secondary); display: flex; flex-direction: column; gap: 4px; }
+    .rawat-feat span { display: flex; align-items: center; gap: 6px; }
+    .rawat-feat i { font-size: 11px; color: var(--teal-light); }
+
+    /* ── BONUS ── */
     .bonus-row {
       display: flex; align-items: center; gap: 12px;
-      padding: 9px 0; border-bottom: 0.5px solid var(--border);
+      padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05);
     }
     .bonus-row:last-child { border-bottom: none; }
-    .bonus-row > i { font-size: 18px; color: var(--purple-mid); flex-shrink: 0; }
+    .bonus-row > i { font-size: 18px; color: var(--gold); flex-shrink: 0; }
     .bonus-chip {
-      font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 20px; white-space: nowrap;
+      font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 2px;
+      white-space: nowrap; font-family: 'Cinzel', serif; letter-spacing: 0.5px;
     }
-    .bonus-text { font-size: 13px; color: var(--text-secondary); }
+    .bonus-text { font-size: 12px; color: var(--text-secondary); }
 
-    /* PAYMENT */
-    .pay-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 1.5rem; }
+    /* ── PAYMENT ── */
+    .pay-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 8px; }
     .pay-card {
-      background: var(--bg-primary);
-      border: 0.5px solid var(--border);
-      border-radius: 10px; padding: 0.85rem 0.5rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md); padding: 0.9rem 0.5rem;
       display: flex; flex-direction: column; align-items: center; gap: 7px;
-      font-size: 13px; font-weight: 700; color: var(--text-primary);
+      font-size: 12px; font-weight: 600; color: var(--text-secondary);
+      letter-spacing: 0.5px;
     }
-    .pay-card i { font-size: 24px; }
+    .pay-card i { font-size: 26px; }
 
-    /* NOTE */
+    /* ── NOTE ── */
     .note-card {
-      background: var(--bg-secondary);
-      border-left: 3px solid var(--purple-mid);
-      border-radius: 0 8px 8px 0;
-      padding: 0.65rem 1rem; margin-bottom: 8px;
-      font-size: 13px; color: var(--text-secondary);
+      background: rgba(255,255,255,0.02);
+      border-left: 2px solid var(--gold-dim);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 0.6rem 1rem; margin-bottom: 7px;
+      font-size: 12px; color: var(--text-secondary);
       display: flex; gap: 9px; align-items: flex-start;
     }
-    .note-card i { color: var(--purple-mid); font-size: 16px; margin-top: 1px; flex-shrink: 0; }
+    .note-card i { color: var(--gold); font-size: 15px; margin-top: 1px; flex-shrink: 0; }
 
-    /* CONTACT */
+    /* ── REQUEST BOX ── */
+    .request-box {
+      background: linear-gradient(135deg, rgba(192,57,43,0.12) 0%, rgba(139,28,28,0.06) 100%);
+      border: 1px solid rgba(192,57,43,0.25);
+      border-radius: var(--radius-md);
+      padding: 1.1rem 1.25rem;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    .request-box p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+    .request-box .highlight { color: var(--red-light); font-weight: 600; }
+
+    /* ── CONTACT ── */
     .contact-row {
-      display: flex; align-items: center; gap: 12px;
-      padding: 10px 0; border-bottom: 0.5px solid var(--border);
+      display: flex; align-items: center; gap: 13px;
+      padding: 11px 0; border-bottom: 1px solid rgba(255,255,255,0.05);
     }
     .contact-row:last-child { border-bottom: none; }
     .contact-icon {
-      width: 38px; height: 38px; border-radius: 10px;
+      width: 40px; height: 40px; border-radius: var(--radius-sm);
       display: flex; align-items: center; justify-content: center;
-      font-size: 20px; flex-shrink: 0;
+      font-size: 20px; flex-shrink: 0; border: 1px solid var(--border);
     }
-    .contact-label { font-size: 11px; color: var(--text-secondary); }
-    .contact-val { font-size: 13px; font-weight: 700; }
+    .contact-label { font-size: 11px; color: var(--text-dim); }
+    .contact-val { font-size: 13px; font-weight: 600; color: var(--text-primary); }
 
-    /* FOOTER */
+    /* ── FOOTER ── */
     .footer {
       text-align: center; padding: 2rem 0 0.5rem;
-      font-size: 12px; color: var(--text-tertiary);
-      display: flex; align-items: center; justify-content: center; gap: 6px;
+      font-size: 12px; color: var(--text-dim);
+      font-family: 'Cinzel', serif; letter-spacing: 1px;
     }
-    .footer i { font-size: 14px; color: var(--purple-mid); }
+    .footer-divider {
+      width: 80px; height: 1px; margin: 0 auto 12px;
+      background: linear-gradient(90deg, transparent, var(--border-glow), transparent);
+    }
 
-    @media (max-width: 440px) {
-      .grid3 { grid-template-columns: repeat(2, 1fr); }
-      .pay-grid { grid-template-columns: repeat(2, 1fr); }
+    @media (max-width: 460px) {
+      .build-grid { grid-template-columns: repeat(2,1fr); }
+      .rawat-grid { grid-template-columns: 1fr; }
+      .pay-grid { grid-template-columns: repeat(2,1fr); }
     }
   </style>
 </head>
@@ -215,35 +344,47 @@
 
   <!-- HERO -->
   <div class="hero">
-    <div class="hero-accent"></div>
-    <div class="hero-chip"><i class="ti ti-waves"></i> WUTHERING WAVES</div>
+    <div class="hero-top-border"></div>
+    <div class="hero-ornament">🌊 Wuthering Waves 🌊</div>
     <div class="hero-name">Risji Joki</div>
-    <div class="hero-tagline">Jasa joki profesional, aman &amp; terpercaya</div>
+    <div class="hero-sub">Jasa Boosting Profesional</div>
+    <div class="hero-badge">
+      <i class="ti ti-flame"></i>
+      OPEN JASA JOKI
+      <i class="ti ti-flame"></i>
+    </div>
     <div class="pills">
       <div class="pill"><i class="ti ti-hand-click"></i> 100% Manual</div>
-      <div class="pill"><i class="ti ti-shield-check"></i> No Cheat / Script</div>
+      <div class="pill"><i class="ti ti-shield-check"></i> Aman & Terpercaya</div>
+      <div class="pill"><i class="ti ti-code-off"></i> No Cheat / Script</div>
       <div class="pill"><i class="ti ti-bolt"></i> Fast Response</div>
       <div class="pill"><i class="ti ti-brand-youtube"></i> Bisa Live</div>
-      <div class="pill"><i class="ti ti-screenshot"></i> Bukti Screenshot</div>
-      <div class="pill"><i class="ti ti-message-check"></i> Request Progress</div>
+      <div class="pill"><i class="ti ti-screenshot"></i> Request Progress</div>
     </div>
   </div>
 
+  <!-- REQUEST -->
+  <div class="request-box">
+    <p>📌 Tidak menemukan layanan yang dicari? Tenang!<br>
+    Kami menerima <span class="highlight">REQUEST JOKI</span> sesuai kebutuhan akunmu.<br>
+    Hubungi admin untuk konsultasi dan penawaran harga.</p>
+  </div>
+
   <!-- QUEST -->
-  <div class="sec-label"><i class="ti ti-book-2"></i> Layanan Utama</div>
+  <div class="sec-label"><i class="ti ti-book-2"></i> Quest <i class="ti ti-book-2"></i></div>
   <div class="card">
     <div class="card-header">
-      <div class="card-icon" style="background:var(--teal-light);">
-        <i class="ti ti-book-2" style="color:var(--teal-mid);"></i>
+      <div class="card-icon" style="background:rgba(43,140,122,0.12);">
+        <i class="ti ti-book-2" style="color:var(--teal-light);"></i>
       </div>
       <div>
-        <div class="card-title">Quest</div>
+        <div class="card-title">Jasa Quest</div>
         <div class="card-desc">Main, Companion, Exploration &amp; Side Quest</div>
       </div>
     </div>
     <div class="prow">
       <div class="prow-left"><i class="ti ti-crown"></i><div class="prow-label">Main Quest</div></div>
-      <div class="pval teal">Rp 20.000 / Act</div>
+      <div class="pval teal">Rp 15.000 – 20.000 / Act</div>
     </div>
     <div class="prow">
       <div class="prow-left"><i class="ti ti-hearts"></i><div class="prow-label">Companion Quest</div></div>
@@ -251,7 +392,7 @@
     </div>
     <div class="prow">
       <div class="prow-left"><i class="ti ti-compass"></i><div class="prow-label">Exploration Quest</div></div>
-      <div class="pval teal">Rp 7.000 / Quest</div>
+      <div class="pval teal">Rp 5.000 / Quest</div>
     </div>
     <div class="prow">
       <div class="prow-left"><i class="ti ti-list-check"></i><div class="prow-label">Side Quest</div></div>
@@ -260,118 +401,124 @@
   </div>
 
   <!-- EXPLORATION -->
+  <div class="sec-label"><i class="ti ti-map-2"></i> Exploration <i class="ti ti-map-2"></i></div>
   <div class="card">
     <div class="card-header">
-      <div class="card-icon" style="background:var(--blue-light);">
-        <i class="ti ti-map-2" style="color:var(--blue-mid);"></i>
+      <div class="card-icon" style="background:rgba(24,95,165,0.12);">
+        <i class="ti ti-map-2" style="color:#5B9BD5;"></i>
       </div>
       <div>
-        <div class="card-title">Exploration</div>
-        <div class="card-desc">Bisa request per area atau per persentase</div>
+        <div class="card-title">Jelajahi Dunia</div>
+        <div class="card-desc">Bisa request per area atau per persentase explore</div>
       </div>
     </div>
 
-    <div class="area-head"><i class="ti ti-waves" style="color:#185FA5;"></i> Black Shores</div>
+    <div class="area-head"><i class="ti ti-moon" style="color:#5B9BD5;"></i> Black Shores</div>
     <div class="prow">
       <div class="prow-left"><i class="ti ti-map-pin"></i><div class="prow-label">Full Explore</div></div>
-      <div class="pval blue">Rp 40.000</div>
+      <div class="pval gold">Rp 40.000</div>
     </div>
 
-    <div class="area-head" style="margin-top:6px;"><i class="ti ti-trees" style="color:#3B6D11;"></i> Rinascita</div>
+    <div class="area-head"><i class="ti ti-trees" style="color:#5BA85B;"></i> Rinascita</div>
     <div class="prow">
       <div class="prow-left"><i class="ti ti-building-castle"></i><div class="prow-label">Septimont</div></div>
-      <div class="pval blue">Rp 50.000</div>
+      <div class="pval gold">Rp 50.000</div>
     </div>
     <div class="prow">
       <div class="prow-left"><i class="ti ti-mountain"></i><div class="prow-label">Sanguis Plateaus</div></div>
-      <div class="pval blue">Rp 30.000</div>
+      <div class="pval gold">Rp 30.000</div>
     </div>
     <div class="prow">
       <div class="prow-left"><i class="ti ti-tools"></i><div class="prow-label">Fabricatorium of the Deep</div></div>
-      <div class="pval blue">Rp 15.000</div>
+      <div class="pval gold">Rp 15.000</div>
     </div>
     <div class="prow">
       <div class="prow-left"><i class="ti ti-map-pin"></i><div class="prow-label">Full Explore</div></div>
-      <div class="pval blue">Rp 250.000</div>
+      <div class="pval gold">Rp 250.000</div>
     </div>
 
-    <div class="area-head" style="margin-top:6px;"><i class="ti ti-torii" style="color:#854F0B;"></i> Huanglong</div>
+    <div class="area-head"><i class="ti ti-torii" style="color:#C8933A;"></i> Huanglong</div>
     <div class="prow">
       <div class="prow-left"><i class="ti ti-map-pin"></i><div class="prow-label">Full Explore</div></div>
-      <div class="pval blue">Rp 200.000</div>
+      <div class="pval gold">Rp 230.000</div>
     </div>
 
-    <div class="area-head" style="margin-top:6px;"><i class="ti ti-snowflake" style="color:#185FA5;"></i> Lahai Roi</div>
+    <div class="area-head"><i class="ti ti-snowflake" style="color:#A0C8F0;"></i> Lahai Roi</div>
     <div class="prow">
       <div class="prow-left"><i class="ti ti-home-2"></i><div class="prow-label">Lahai Roi</div></div>
-      <div class="pval blue">Rp 150.000</div>
+      <div class="pval gold">Rp 150.000</div>
     </div>
     <div class="prow">
       <div class="prow-left"><i class="ti ti-mountain"></i><div class="prow-label">Frostlands Surface</div></div>
-      <div class="pval blue">Rp 60.000</div>
+      <div class="pval gold">Rp 60.000</div>
     </div>
     <div class="prow">
       <div class="prow-left"><i class="ti ti-road"></i><div class="prow-label">Dimmr Plains</div></div>
-      <div class="pval blue">Rp 75.000</div>
+      <div class="pval gold">Rp 75.000</div>
     </div>
     <div class="prow">
       <div class="prow-left"><i class="ti ti-map-pin"></i><div class="prow-label">Full Explore</div></div>
-      <div class="pval blue">Rp 250.000</div>
+      <div class="pval gold">Rp 250.000</div>
     </div>
   </div>
 
-  <!-- BUILD -->
-  <div class="sec-label"><i class="ti ti-sword"></i> Build &amp; Development</div>
-  <div class="grid3">
-    <div class="mini-card">
-      <div class="mini-head"><i class="ti ti-user-star" style="color:var(--purple-mid);"></i><div class="mini-title">Character</div></div>
-      <div class="mini-price">Rp 25.000</div>
-      <div style="font-size:11px;color:var(--text-secondary);">Max Level</div>
+  <!-- BUILD CHARACTER -->
+  <div class="sec-label"><i class="ti ti-sword"></i> Build Character <i class="ti ti-sword"></i></div>
+  <div class="build-grid">
+    <div class="build-card">
+      <div class="build-icon">⭐</div>
+      <div class="build-title">Character</div>
+      <div class="build-price">Rp 25K</div>
+      <div class="build-sub">Max Level</div>
     </div>
-    <div class="mini-card">
-      <div class="mini-head"><i class="ti ti-sword" style="color:var(--blue-mid);"></i><div class="mini-title">Weapon</div></div>
-      <div class="mini-price">Rp 15.000</div>
-      <div style="font-size:11px;color:var(--text-secondary);">Max Level</div>
+    <div class="build-card">
+      <div class="build-icon">🗡️</div>
+      <div class="build-title">Weapon</div>
+      <div class="build-price">Rp 15K</div>
+      <div class="build-sub">Max Level</div>
     </div>
-    <div class="mini-card">
-      <div class="mini-head"><i class="ti ti-book-upload" style="color:var(--teal-mid);"></i><div class="mini-title">Talent</div></div>
-      <div class="mini-price">Rp 25.000</div>
-      <div style="font-size:11px;color:var(--text-secondary);">Max Level</div>
+    <div class="build-card">
+      <div class="build-icon">📚</div>
+      <div class="build-title">Talent</div>
+      <div class="build-price">Rp 20K</div>
+      <div class="build-sub">Max Level</div>
     </div>
   </div>
 
-  <!-- ECHO -->
+  <!-- BUILD ECHO -->
+  <div class="sec-label"><i class="ti ti-target-arrow"></i> Build Echo <i class="ti ti-target-arrow"></i></div>
   <div class="card">
     <div class="card-header">
-      <div class="card-icon" style="background:var(--amber-light);">
-        <i class="ti ti-target-arrow" style="color:var(--amber-mid);"></i>
+      <div class="card-icon" style="background:rgba(200,147,58,0.1);">
+        <i class="ti ti-target-arrow" style="color:var(--gold-light);"></i>
       </div>
       <div>
-        <div class="card-title">Build Echo</div>
+        <div class="card-title">Echo Farming</div>
         <div class="card-desc">Target Double Crit per set</div>
       </div>
     </div>
-    <div class="prow" style="border-bottom:none; padding-bottom:0;">
-      <div class="prow-left" style="gap:8px;">
-        <i class="ti ti-sparkles" style="font-size:15px;color:var(--amber-mid);"></i>
+    <div class="prow" style="border-bottom:none;padding-bottom:0;">
+      <div class="prow-left">
+        <i class="ti ti-sparkles" style="font-size:15px;color:var(--gold);"></i>
         <div>
           <div class="prow-label">1 Set Echo (Double Crit)</div>
           <div class="prow-sub">Syarat: Data Bank Lv.20+ &amp; sediakan Waveplates</div>
         </div>
       </div>
-      <div class="pval amber">Rp 40.000 / Set</div>
+      <div class="pval gold">Rp 40.000 / Set</div>
     </div>
   </div>
 
   <!-- DATA BANK -->
+  <div class="sec-label"><i class="ti ti-database"></i> Data Bank <i class="ti ti-database"></i></div>
   <div class="card">
     <div class="card-header">
-      <div class="card-icon" style="background:var(--purple-light);">
-        <i class="ti ti-database" style="color:var(--purple-mid);"></i>
+      <div class="card-icon" style="background:rgba(123,94,167,0.12);">
+        <i class="ti ti-database" style="color:var(--purple-light);"></i>
       </div>
       <div>
-        <div class="card-title">Data Bank</div>
-        <div class="card-desc">Upgrade level data bank karakter</div>
+        <div class="card-title">Upgrade Data Bank</div>
+        <div class="card-desc">Level data bank karakter</div>
       </div>
     </div>
     <div class="prow">
@@ -389,31 +536,31 @@
   </div>
 
   <!-- RAWAT AKUN -->
-  <div class="sec-label"><i class="ti ti-calendar"></i> Rawat Akun</div>
-  <div class="grid3" style="margin-bottom:1.5rem;">
-    <div class="mini-card">
-      <div class="mini-head"><i class="ti ti-sun" style="color:var(--amber-mid);"></i><div class="mini-title">Daily</div></div>
-      <div class="mini-price">Rp 3.000</div>
-      <div class="mini-feat">
+  <div class="sec-label"><i class="ti ti-calendar"></i> Rawat Akun <i class="ti ti-calendar"></i></div>
+  <div class="rawat-grid" style="margin-bottom:1rem;">
+    <div class="rawat-card">
+      <div class="rawat-header"><i class="ti ti-sun" style="color:#E8B96A;"></i><div class="rawat-title">Daily</div></div>
+      <div class="rawat-price">Rp 3K</div>
+      <div class="rawat-feat">
         <span><i class="ti ti-check"></i> Daily Quest</span>
         <span><i class="ti ti-check"></i> 240 Waveplates</span>
         <span><i class="ti ti-check"></i> Claim BP</span>
       </div>
     </div>
-    <div class="mini-card">
-      <div class="mini-head"><i class="ti ti-calendar-week" style="color:var(--blue-mid);"></i><div class="mini-title">Weekly</div></div>
-      <div class="mini-price">Rp 25.000</div>
-      <div class="mini-feat">
+    <div class="rawat-card">
+      <div class="rawat-header"><i class="ti ti-calendar-week" style="color:#5B9BD5;"></i><div class="rawat-title">Weekly</div></div>
+      <div class="rawat-price">Rp 25K</div>
+      <div class="rawat-feat">
         <span><i class="ti ti-check"></i> Daily Quest</span>
         <span><i class="ti ti-check"></i> 240 Waveplates</span>
         <span><i class="ti ti-check"></i> Claim BP</span>
       </div>
     </div>
-    <div class="mini-card feat">
-      <div class="feat-tag"><i class="ti ti-star" style="font-size:10px;"></i> Best Value</div>
-      <div class="mini-head"><i class="ti ti-calendar-month" style="color:var(--purple-mid);"></i><div class="mini-title">Monthly</div></div>
-      <div class="mini-price">Rp 150.000</div>
-      <div class="mini-feat">
+    <div class="rawat-card best">
+      <div class="rawat-badge">⭐ Best Value</div>
+      <div class="rawat-header"><i class="ti ti-calendar-month" style="color:var(--gold-light);"></i><div class="rawat-title">Monthly</div></div>
+      <div class="rawat-price">Rp 150K</div>
+      <div class="rawat-feat">
         <span><i class="ti ti-check"></i> Daily Quest</span>
         <span><i class="ti ti-check"></i> 240 Waveplates</span>
         <span><i class="ti ti-check"></i> Claim BP</span>
@@ -424,48 +571,48 @@
   </div>
 
   <!-- BONUS -->
-  <div class="sec-label"><i class="ti ti-gift"></i> Bonus Order</div>
-  <div class="card" style="margin-bottom:1.5rem;">
+  <div class="sec-label"><i class="ti ti-gift"></i> Bonus Order <i class="ti ti-gift"></i></div>
+  <div class="card" style="margin-bottom:1rem;">
     <div class="bonus-row">
       <i class="ti ti-gift"></i>
-      <div class="bonus-chip" style="background:var(--purple-light);color:var(--purple-dark);">Order Rp 50.000+</div>
+      <div class="bonus-chip" style="background:rgba(123,94,167,0.2);color:var(--purple-light);border:1px solid rgba(123,94,167,0.3);">Order Rp 50.000+</div>
       <div class="bonus-text">Free 1 Side Quest</div>
     </div>
     <div class="bonus-row">
-      <i class="ti ti-gift" style="color:#3B6D11;"></i>
-      <div class="bonus-chip" style="background:var(--green-light);color:var(--green-mid);">Order Rp 100.000+</div>
+      <i class="ti ti-gift" style="color:#5BA85B;"></i>
+      <div class="bonus-chip" style="background:rgba(91,168,91,0.15);color:#8DC88D;border:1px solid rgba(91,168,91,0.3);">Order Rp 100.000+</div>
       <div class="bonus-text">Free 2 Side Quest</div>
     </div>
     <div class="bonus-row">
-      <i class="ti ti-gift" style="color:var(--amber-mid);"></i>
-      <div class="bonus-chip" style="background:var(--amber-light);color:#633806;">Order Rp 200.000+</div>
+      <i class="ti ti-gift" style="color:var(--gold-light);"></i>
+      <div class="bonus-chip" style="background:rgba(200,147,58,0.15);color:var(--gold-light);border:1px solid rgba(200,147,58,0.3);">Order Rp 200.000+</div>
       <div class="bonus-text">Free 5 Side Quest</div>
     </div>
   </div>
 
-  <!-- PEMBAYARAN -->
-  <div class="sec-label"><i class="ti ti-credit-card"></i> Metode Pembayaran</div>
-  <div class="pay-grid">
-    <div class="pay-card"><i class="ti ti-qrcode"></i> QRIS</div>
-    <div class="pay-card"><i class="ti ti-brand-stripe" style="color:#1565C0;"></i> DANA</div>
-    <div class="pay-card"><i class="ti ti-wallet" style="color:#6A1B9A;"></i> OVO</div>
-    <div class="pay-card"><i class="ti ti-device-mobile-dollar" style="color:#1B5E20;"></i> GoPay</div>
-  </div>
-
   <!-- KETENTUAN -->
-  <div class="sec-label"><i class="ti ti-clipboard-list"></i> Ketentuan</div>
-  <div style="margin-bottom:1.5rem;">
+  <div class="sec-label"><i class="ti ti-clipboard-list"></i> Ketentuan <i class="ti ti-clipboard-list"></i></div>
+  <div style="margin-bottom:1rem;">
     <div class="note-card"><i class="ti ti-user-x"></i>Jangan login saat proses joki berlangsung.</div>
     <div class="note-card"><i class="ti ti-lock-password"></i>Disarankan mengganti password setelah joki selesai.</div>
     <div class="note-card"><i class="ti ti-screenshot"></i>Progress sebelum &amp; sesudah discreenshot sebagai bukti pengerjaan.</div>
     <div class="note-card"><i class="ti ti-shield-lock"></i>Kerahasiaan akun dijamin aman.</div>
   </div>
 
+  <!-- PEMBAYARAN -->
+  <div class="sec-label"><i class="ti ti-credit-card"></i> Pembayaran <i class="ti ti-credit-card"></i></div>
+  <div class="pay-grid" style="margin-bottom:1rem;">
+    <div class="pay-card"><i class="ti ti-qrcode" style="color:var(--gold);"></i> QRIS</div>
+    <div class="pay-card"><i class="ti ti-brand-stripe" style="color:#4A90D9;"></i> DANA</div>
+    <div class="pay-card"><i class="ti ti-wallet" style="color:#9B59B6;"></i> OVO</div>
+    <div class="pay-card"><i class="ti ti-device-mobile-dollar" style="color:#27AE60;"></i> GoPay</div>
+  </div>
+
   <!-- KONTAK -->
-  <div class="sec-label"><i class="ti ti-address-book"></i> Hubungi Kami</div>
+  <div class="sec-label"><i class="ti ti-address-book"></i> Order Sekarang <i class="ti ti-address-book"></i></div>
   <div class="card">
     <div class="contact-row">
-      <div class="contact-icon" style="background:#FBEAF0;">
+      <div class="contact-icon" style="background:rgba(212,83,126,0.1);">
         <i class="ti ti-brand-instagram" style="color:#D4537E;"></i>
       </div>
       <div>
@@ -474,7 +621,7 @@
       </div>
     </div>
     <div class="contact-row">
-      <div class="contact-icon" style="background:#E1F5EE;">
+      <div class="contact-icon" style="background:rgba(29,158,117,0.1);">
         <i class="ti ti-brand-whatsapp" style="color:#1D9E75;"></i>
       </div>
       <div>
@@ -483,7 +630,7 @@
       </div>
     </div>
     <div class="contact-row">
-      <div class="contact-icon" style="background:#FAECE7;">
+      <div class="contact-icon" style="background:rgba(216,90,48,0.1);">
         <i class="ti ti-brand-youtube" style="color:#D85A30;"></i>
       </div>
       <div>
@@ -494,8 +641,11 @@
   </div>
 
   <div class="footer">
-    <i class="ti ti-heart"></i>
-    Harga bersahabat &middot; Aman &middot; Terpercaya &mdash; &copy; Risji Joki 2025
+    <div class="footer-divider"></div>
+    Harga Bersahabat &middot; Aman &middot; Terpercaya<br>
+    <span style="font-size:11px;margin-top:5px;display:block;opacity:0.5;">
+      Terima kasih sudah mampir, semoga harimu menyenangkan!
+    </span>
   </div>
 
 </div>
